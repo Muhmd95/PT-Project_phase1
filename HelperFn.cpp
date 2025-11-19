@@ -9,9 +9,21 @@ bool IsValue (string input)
 
 	// Double values can be: 12.5, -12.5, -23, -23. , -23.0 …etc.
 
-	//TODO: complete this function
+	//TODO: complete this function   Mohamed Ahmed
+	if (input.empty())
+	{
+		return false;
+	}
+	for (int i = 0; i < input.length(); i++)
+	{
+		if (input[i] == '-' || (input[i] >= 48 && input[i] <= 57) || input[i] == '.')
+		{
+			continue;
+		}
+		else return false;
+	}
+	return true;
 
-	return false;
 }
 
 bool IsVariable (string input)
@@ -23,7 +35,7 @@ bool IsVariable (string input)
 	// After the first initial letter, variable names can contain letters, numbers and underscores.  
 	// No spaces or special characters, however, are allowed.
 
-	//TODO: complete this function
+	//TODO: complete this function Mohamed Osama
 	if (input.empty()) {
 		return false;
 	}
@@ -47,6 +59,13 @@ OpType ValueOrVariable (string input)
 	// chand returns enum "OpType" (the enum is declared in the .h)
 
 	//TODO: complete this function
+	if (IsVariable(input))
+	{
+		return VARIABLE_OP;
+	}
+	else if (IsValue(input)) {
+		return VALUE_OP;
+	}
 
 	return INVALID_OP;
 }
