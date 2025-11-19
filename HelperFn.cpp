@@ -1,5 +1,6 @@
 
 #include "HelperFn.h"
+#include <string.h>
 
 bool IsValue (string input)
 {
@@ -23,8 +24,21 @@ bool IsVariable (string input)
 	// No spaces or special characters, however, are allowed.
 
 	//TODO: complete this function
+	if (input.empty()) {
+		return false;
+	}
+	if (input[0] != '_' || ( (input[0] > 'z' || input[0] < 'a') && (input[0] < 'A' || input[0] > 'Z') ) )  {
+		return false;
+	}
+	int len = input.size();
+	for (int i = 1; i < len; i++)
+	{
+		if (input[i] != '_' || ( (input[i] > 'z' || input[i] < 'a') && (input[i] < 'A' || input[i] > 'Z') ) || (input[i]<'0' || input[i]>'9') ) {
+			return false;
+		}
+	}
 
-	return false;
+	return true;
 }
 
 OpType ValueOrVariable (string input)
