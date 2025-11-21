@@ -13,7 +13,7 @@ Output::Output()
 
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 80;
+	UI.MenuItemWidth = 50;   // I edited the width of the items
 	UI.DrawingAreaWidth = 0.75 * UI.width;
 
 	UI.DrawColor = BLUE;
@@ -57,7 +57,7 @@ void Output::CreateStatusBar()
 	pWind->DrawLine(0, UI.height-UI.StatusBarHeight, UI.width, UI.height-UI.StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-//TODO: Complete this function
+//DONE: Complete this function
 void Output::CreateDesignToolBar() //Draws the Design Menu
 {
 	UI.AppMode = DESIGN;	//Design Mode
@@ -70,13 +70,50 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	//First prepare List of images for each menu item
 	//To control the order of these images in the menu, 
 	//reoder them in Defs.h ==> enum DrawMenuItem
+
+	//DONE: Prepare images for each menu item and add it to the list
 	string MenuItemImages[DSN_ITM_CNT];
+
+	//START AND END
+	MenuItemImages[ITM_START] = "images\\Assign.jpg"; 
+	MenuItemImages[ITM_END] = "images\\Assign.jpg";
+
+	//DECLARE
+	MenuItemImages[ITM_DECLARE] = "images\\Assign.jpg";
+
+	//ASSIGN
 	MenuItemImages[ITM_VALUE_ASSIGN] = "images\\Assign.jpg";
-	MenuItemImages[ITM_COND] = "images\\Condition.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\Exit.jpg";
-	//TODO: Prepare images for each menu item and add it to the list
+	MenuItemImages[ITM_VAR_ASSIGN] = "images\\Assign.jpg";
+	MenuItemImages[ITM_OPER_ASSIGN] = "images\\Assign.jpg";
 
+	//COND
+	MenuItemImages[ITM_COND] = "images\\Assign.jpg";
 
+	//READ AND WRITE
+	MenuItemImages[ITM_READ] = "images\\Assign.jpg";
+	MenuItemImages[ITM_WRITE] = "images\\Assign.jpg";
+
+	//CONNECTOR
+	MenuItemImages[ITM_CONNECTOR] = "images\\Assign.jpg";
+
+	//SELECTION AND EDITING
+	MenuItemImages[ITM_SELECT] = "images\\Assign.jpg";
+	MenuItemImages[ITM_EDIT] = "images\\Assign.jpg";
+
+	//CLIPBOARD
+	MenuItemImages[ITM_COPY] = "images\\Assign.jpg";
+	MenuItemImages[ITM_CUT] = "images\\Assign.jpg";
+	MenuItemImages[ITM_PASTE] = "images\\Assign.jpg";
+	MenuItemImages[ITM_DEL] = "images\\Assign.jpg";
+
+	//FILES
+	MenuItemImages[ITM_SAVE] = "images\\Assign.jpg";
+	MenuItemImages[ITM_LOAD] = "images\\Assign.jpg";
+
+	MenuItemImages[ITM_SWITCH_SIM] = "images\\Condition.jpg";
+	MenuItemImages[ITM_EXIT] = "images\\Assign.jpg";
+
+	
 	//Draw menu item one image at a time
 	for(int i=0; i<DSN_ITM_CNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);

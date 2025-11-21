@@ -42,11 +42,3 @@ public:
 };
 
 #endif
-
-	//TODO: Complete the implementation of the following function
-	ActionType GetUserAction() const; //Reads the user click and maps it to an action
-
-	~Input();
-};
-
-#endif

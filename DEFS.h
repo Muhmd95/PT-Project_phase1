@@ -55,14 +55,47 @@ enum DesignMenuItem //The items of the design menu --> THE ORDER MATTERS
 {
 	//Note: Items are ordered here as they appear in menu
 	//If you change the menu items order, change the order here too
-	ITM_VALUE_ASSIGN,//simple assignment statement
-	ITM_COND,		//conditional statement
+	// 
+	// 
+	// Start and End
+	ITM_START,
+	ITM_END,
 
+	// Declarations
+	ITM_DECLARE,
 
+	// Assignment Statements (3 types)
+	ITM_VALUE_ASSIGN,	//simple assignment statement
+	ITM_VAR_ASSIGN,		//for variable assign
+	ITM_OPER_ASSIGN,	//for operator assign
+
+	// Conditional
+	ITM_COND,	//conditional statement
+
+	// I/O Statements (Read and Write)
+	ITM_READ,
+	ITM_WRITE,
+
+	// Connectors
+	ITM_CONNECTOR,
+
+	// Selection and Editing
+	ITM_SELECT,
+	ITM_EDIT,
+
+	// Clipboard and Deletion
+	ITM_COPY,
+	ITM_CUT,
+	ITM_PASTE,
+	ITM_DEL,
+
+	// File Operations
+	ITM_SAVE,
+	ITM_LOAD,
+
+	ITM_SWITCH_SIM,	//switch
 	ITM_EXIT,		//Exit
-	
-	//TODO: Add more items names here
-	
+
 	DSN_ITM_CNT		//no. of design menu items ==> This should be the last line in this enum
 	
 };

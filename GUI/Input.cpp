@@ -35,7 +35,7 @@ string Input::GetString(Output *pO) const
 
 double Input::GetValue(Output* pO) const	// Reads a double value from the user 
 {
-	///TODO: add code to read a double value from the user and assign it to D
+	///DONE: add code to read a double value from the user and assign it to D
 
 	double D = 0;
 	string label;
@@ -54,7 +54,7 @@ double Input::GetValue(Output* pO) const	// Reads a double value from the user
 }
 
 
-//TODO: Add the function Input::GetVariable 
+//DONE: Add the function Input::GetVariable 
 // to read a �variable name� from the user (from the keyboard). 
 // It does not return before taking a valid variable name.
 string Input::GetVariable(Output *pO) const {
@@ -63,13 +63,13 @@ string Input::GetVariable(Output *pO) const {
 		pO->PrintMessage("Please enter a Variable");
 		label = GetString(pO);
 		if (IsVariable(label)) {
-           return Label;
+           return label;
 		}
 	}
 
 }
 
-//TODO: Add the function Input::GetArithOperator 
+//DONE: Add the function Input::GetArithOperator 
 // to read an arithmetic operator (+, -, * or /) from the user. 
 // It does not return before taking a valid arithmetic operator.
  char Input::GetArithOperator(Output* pO) const {
@@ -82,7 +82,7 @@ string Input::GetVariable(Output *pO) const {
 		}
 	}
 }
-//TODO: Add the function Input::GetCompOperator
+//DONE: Add the function Input::GetCompOperator
 // similar to the previous function but for comparison operators (==, !=, <, <=, > or >=).
 
 string Input::GetCompOperator(Output* pO) const
@@ -120,9 +120,28 @@ ActionType Input::GetUserAction() const
 			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
 			switch (ClickedItem)
 			{
-			case ITM_VALUE_ASSIGN: return ADD_VALUE_ASSIGN;
-			case ITM_COND: return ADD_CONDITION;
-			case ITM_EXIT: return EXIT;	
+			case ITM_START:		return ADD_START;
+			case ITM_END:		return ADD_END;
+			case ITM_DECLARE:		return ADD_DECLARE_VARIABLE;
+			case ITM_VALUE_ASSIGN:		return ADD_VALUE_ASSIGN;
+			case ITM_VAR_ASSIGN:		return ADD_VAR_ASSIGN;
+			case ITM_OPER_ASSIGN:		return ADD_OPER_ASSIGN;
+			case ITM_COND:		return ADD_CONDITION;
+			case ITM_READ:		return ADD_READ;
+			case ITM_WRITE:		return ADD_WRITE;
+			case ITM_CONNECTOR:		return ADD_CONNECTOR;
+			case ITM_SELECT:		return SELECT;
+			case ITM_EDIT:		return EDIT_STAT;
+			case ITM_DEL:		return DEL;
+			case ITM_COPY:		return COPY;
+			case ITM_CUT:		return CUT;
+			case ITM_PASTE:		return PASTE;
+			case ITM_SAVE:		return SAVE;
+			case ITM_LOAD:		return LOAD;
+			case ITM_SWITCH_SIM:		return SWITCH_SIM_MODE;
+			case ITM_EXIT:		return EXIT;
+
+
 			default: return DSN_TOOL;
 			}
 		}
