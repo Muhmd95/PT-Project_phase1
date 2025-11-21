@@ -42,7 +42,15 @@ enum ActionType // The actions supported
 
 
 	//TODO: ADD THE ACTIONS OF SIMULATION MODE
-
+	VALIDATE,	    //Validate
+	RUN,	        //Run
+	DEBUG,         //debug
+	GENCODE,      //generate c++ code
+	REVALIDATE,  // revalidate
+	RERUN,      //rerun
+	UNDO,      //undo
+	REDO,     //redo
+	
 
 	DRAWING_AREA,  //A click on the drawing area
 	OUTPUT_AREA,   //A click on the output area
@@ -106,8 +114,18 @@ enum SimMenuItem //The items of the simulation menu
 	//Note: Items are ordered here as they appear in menu
 	ITM_VALIDATE,	//Validate
 	ITM_RUN,	    //Run
-		
+
 	//TODO:Add more items names here
+
+	ITM_DEBUG,
+	ITM_GENCODE,
+	ITM_REVALIDATE,
+	ITM_RERUN,
+	ITM_UNDO,
+	ITM_REDO,
+	ITM_SWITCH_DSN_MODE,
+
+
 	
 	SIM_ITM_CNT		//no. of simulation menu items ==> This should be the last line in this enum
 	
