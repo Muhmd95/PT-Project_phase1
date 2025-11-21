@@ -38,28 +38,66 @@ double Input::GetValue(Output* pO) const	// Reads a double value from the user
 	///TODO: add code to read a double value from the user and assign it to D
 
 	double D = 0;
-		
+	string label;
 	//This function should make any needed validations on the entered text 
-	// to make sure it is a double value (e.g. 12.5, -12.5, -23, -23., -23.0 …etc.).
-
-	pO->PrintMessage("Please enter a value");
-	
+	// to make sure it is a double value (e.g. 12.5, -12.5, -23, -23., -23.0 ï¿½etc.).
+	while(1) {
+		pO->PrintMessage("Please enter a value");
+		label = GetString(pO);
+		if (IsValue(label)) {
+			D =stod(label);
+			break;
+		}
+	}
 	//Read a double value from the user
-	
 	return D;
 }
 
 
 //TODO: Add the function Input::GetVariable 
-// to read a “variable name” from the user (from the keyboard). 
+// to read a ï¿½variable nameï¿½ from the user (from the keyboard). 
 // It does not return before taking a valid variable name.
+string Input::GetVariable(Output *pO) const {
+        string label;
+	while(1) {
+		pO->PrintMessage("Please enter a Variable");
+		label = GetString(pO);
+		if (IsVariable(label)) {
+           return Label;
+		}
+	}
+
+}
 
 //TODO: Add the function Input::GetArithOperator 
 // to read an arithmetic operator (+, -, * or /) from the user. 
 // It does not return before taking a valid arithmetic operator.
-
+ char Input::GetArithOperator(Output* pO) const {
+	string label;
+	while(1) {
+		pO->PrintMessage("Please enter a Operator");
+		label = GetString(pO);
+		if (label == "+" || label == "-" || label == "*" || label == "/" ) {
+			return label[0];
+		}
+	}
+}
 //TODO: Add the function Input::GetCompOperator
 // similar to the previous function but for comparison operators (==, !=, <, <=, > or >=).
+
+string Input::GetCompOperator(Output* pO) const
+{
+	string label;
+	while (true) {
+		pO->PrintMessage("Please enter a Comparison Operator");
+		label = GetString(pO);
+		if (label == "==" || label == ">=" || label == "<=" || label == "!=" || label == ">" || label == "<") {
+			break;
+		}
+	}
+
+	return label;
+}
 
 
 //TODO: Complete the implementation of the following function
