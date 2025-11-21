@@ -92,6 +92,33 @@ void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 {
 	UI.AppMode = SIMULATION;	//Simulation Mode
 	///TODO: add code to create the simulation tool bar
+	string MenuItemImages[SIM_ITM_CNT];
+	//valdiating
+	MenuItemImages[ITM_VALIDATE] = "images\\validate.jpg";
+	//run
+	MenuItemImages[ITM_RUN] = "images\\run.jpg";
+    //Dubug
+	MenuItemImages[ITM_DEBUG] = "images\\debug.jpg";
+    //GENCODE
+	MenuItemImages[ITM_GENCODE] = "images\\Gend-code.jpg";
+    //REVALIDATE
+	MenuItemImages[ITM_REVALIDATE]= "images\\revalidate.jpg";
+    //Rerun
+	MenuItemImages[ITM_RERUN]= "images\\rerun.jpg";
+    //undo
+	MenuItemImages[ITM_UNDO] = "images\\undo.jpg";
+    //Redo
+	MenuItemImages[ITM_REDO] = "images\\redo.jpg";
+    //switch
+	MenuItemImages[ITM_SWITCH_DSN_MODE]= "images\\switch.jpg";
+	//Draw menu item one image at a time
+
+	for (int i = 0; i < SIM_ITM_CNT; i++)
+		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 2);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::ClearStatusBar()
