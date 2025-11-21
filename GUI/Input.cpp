@@ -100,7 +100,7 @@ string Input::GetCompOperator(Output* pO) const
 }
 
 
-//TODO: Complete the implementation of the following function
+//DONE: Complete the implementation of the following function
 ActionType Input::GetUserAction() const
 {	
 	//This function reads the position where the user clicks to determine the desired action
@@ -161,7 +161,7 @@ ActionType Input::GetUserAction() const
 	else	//Application is in Simulation mode
 	{
 
-		// TODO: This should be changed after creating the compelete simulation bar 
+		// DONE: This should be changed after creating the compelete simulation bar 
 		if (y >= 0 && y < UI.ToolBarHeight)
 		{
 			//Check which Menu item was clicked
@@ -179,10 +179,23 @@ ActionType Input::GetUserAction() const
 			case ITM_RERUN: return RERUN;
 			case ITM_UNDO: return UNDO;
 			case ITM_REDO: return REDO;
+			case ITM_SWITCH_DSN_MODE: return SWITCH_DSN_MODE;
+
+			default: return DSN_TOOL;
 			}
 		}
+		//[2] User clicks on the drawing area
+		if (y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
+		{
+			if (x <= UI.DrawingAreaWidth)
+				return DRAWING_AREA;
+			else
+				return OUTPUT_AREA;
+		}
 
-		return SWITCH_DSN_MODE;	// THIS SHOULD BE CHANGED
+		//[3] User clicks on the status bar
+		return STATUS;
+
 	}
 
 }

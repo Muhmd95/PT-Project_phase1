@@ -124,7 +124,7 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-//TODO: Complete this function
+//DONE: Complete this function
 void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 {
 	UI.AppMode = SIMULATION;	//Simulation Mode

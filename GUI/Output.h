@@ -15,7 +15,7 @@ public:
 
 	void CreateStatusBar(); //Creates status bar
 
-	//TODO: Complete the following 2 functions
+	//DONE: Complete the following 2 functions
 	void CreateDesignToolBar();	//Tool bar of the design mode
 	void CreateSimulationToolBar(); //Tool bar of the simulation mode
 

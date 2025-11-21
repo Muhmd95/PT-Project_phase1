@@ -9,7 +9,7 @@ bool IsValue (string input)
 
 	// Double values can be: 12.5, -12.5, -23, -23. , -23.0 …etc.
 
-	//TODO: complete this function   Mohamed Ahmed
+	//DONE: complete this function   Mohamed Ahmed
 	if (input.empty())
 	{
 		return false;
@@ -48,7 +48,7 @@ bool IsVariable(string input)
 	// After the first initial letter, variable names can contain letters, numbers and underscores.  
 	// No spaces or special characters, however, are allowed.
 
-	//TODO: complete this function
+	//DONE: complete this function
 	if (input[0] != '_' && ((input[0] > 'z' || input[0] < 'a') && (input[0] < 'A' || input[0] > 'Z'))) {
 		return false;
 	}
@@ -68,7 +68,7 @@ OpType ValueOrVariable (string input)
 	// checks if the input string is a double value or a variable name
 	// chand returns enum "OpType" (the enum is declared in the .h)
 
-	//TODO: complete this function
+	//DONE: complete this function
 	if (IsVariable(input))
 	{
 		return VARIABLE_OP;
