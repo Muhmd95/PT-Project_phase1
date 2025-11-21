@@ -162,6 +162,26 @@ ActionType Input::GetUserAction() const
 	{
 
 		// TODO: This should be changed after creating the compelete simulation bar 
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			//Check which Menu item was clicked
+			//This assumes that menu items are lined up horizontally
+			int ClickedItem = (x / UI.MenuItemWidth);
+			//Divide x coord of the point clicked by the menu item width (int division)
+			//if division result is 0 ==> first item is clicked, if 1 ==> 2nd item and so on
+			switch (ClickedItem)
+			{
+			case ITM_VALIDATE: return VALIDATE ;
+			case ITM_RUN: return RUN;
+			case ITM_DEBUG: return DEBUG;
+			case ITM_GENCODE: return GENCODE;
+			case ITM_REVALIDATE: return REVALIDATE;
+			case ITM_RERUN: return RERUN;
+			case ITM_UNDO: return UNDO;
+			case ITM_REDO: return REDO;
+			}
+		}
+
 		return SWITCH_DSN_MODE;	// THIS SHOULD BE CHANGED
 	}
 
