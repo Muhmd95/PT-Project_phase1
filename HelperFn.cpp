@@ -1,15 +1,15 @@
 
 #include "HelperFn.h"
+#include <string.h>
 
 bool IsValue (string input)
 {
 	// checks if the input string is a double value
 	// return true if it's double value, false otherwise
 
-	// Double values can be: 12.5, -12.5, -23, -23. , -23.0 …etc.
+	// Double values can be: 12.5, -12.5, -23, -23. , -23.0 â€¦etc.
 
-	//TODO: complete this function
-
+	//TODO: complete this function   Mohamed Ahmed
 	if (input.empty())
 	{
 		return false;
@@ -39,7 +39,7 @@ bool IsValue (string input)
 	return true;
 }
 
-bool IsVariable (string input)
+bool IsVariable(string input)
 {
 	// checks if the input string is a variable name
 	// return true if it can be a variable name, false otherwise
@@ -49,8 +49,18 @@ bool IsVariable (string input)
 	// No spaces or special characters, however, are allowed.
 
 	//TODO: complete this function
+	if (input[0] != '_' && ((input[0] > 'z' || input[0] < 'a') && (input[0] < 'A' || input[0] > 'Z'))) {
+		return false;
+	}
+	int len = input.size();
+	for (int i = 1; i < len; i++)
+	{
+		if (input[i] != '_' && (input[i] > 'z' || input[i] < 'a') && (input[i] < 'A' || input[i] > 'Z') && (input[i] < '0' || input[i]>'9')) {
+			return false;
+		}
+	}
 
-	return false;
+	return true;
 }
 
 OpType ValueOrVariable (string input)
@@ -59,6 +69,13 @@ OpType ValueOrVariable (string input)
 	// chand returns enum "OpType" (the enum is declared in the .h)
 
 	//TODO: complete this function
+	if (IsVariable(input))
+	{
+		return VARIABLE_OP;
+	}
+	else if (IsValue(input)) {
+		return VALUE_OP;
+	}
 
 	return INVALID_OP;
 }
