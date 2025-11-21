@@ -134,7 +134,7 @@ void Output::DrawString(const int iX, const int iY, const string Text)
 //////////////////////////////////////////////////////////////////////////////////////////
 
 //======================================================================================//
-//								Statements Drawing Functions								//
+//								Statements Drawing Functions							//
 //======================================================================================//
 
 //Draw assignment statement and write the "Text" on it

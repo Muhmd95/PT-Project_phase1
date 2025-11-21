@@ -26,7 +26,7 @@ bool IsValue (string input)
 
 }
 
-bool IsVariable (string input)
+bool IsVariable(string input)
 {
 	// checks if the input string is a variable name
 	// return true if it can be a variable name, false otherwise
@@ -35,17 +35,14 @@ bool IsVariable (string input)
 	// After the first initial letter, variable names can contain letters, numbers and underscores.  
 	// No spaces or special characters, however, are allowed.
 
-	//TODO: complete this function Mohamed Osama
-	if (input.empty()) {
-		return false;
-	}
-	if (input[0] != '_' || ( (input[0] > 'z' || input[0] < 'a') && (input[0] < 'A' || input[0] > 'Z') ) )  {
+	//TODO: complete this function
+	if (input[0] != '_' && ((input[0] > 'z' || input[0] < 'a') && (input[0] < 'A' || input[0] > 'Z'))) {
 		return false;
 	}
 	int len = input.size();
 	for (int i = 1; i < len; i++)
 	{
-		if (input[i] != '_' || ( (input[i] > 'z' || input[i] < 'a') && (input[i] < 'A' || input[i] > 'Z') ) || (input[i]<'0' || input[i]>'9') ) {
+		if (input[i] != '_' && (input[i] > 'z' || input[i] < 'a') && (input[i] < 'A' || input[i] > 'Z') && (input[i] < '0' || input[i]>'9')) {
 			return false;
 		}
 	}
