@@ -10,7 +10,33 @@ bool IsValue (string input)
 
 	//TODO: complete this function
 
-	return false;
+	if (input.empty())
+	{
+		return false;
+	}
+	bool point = false;
+	bool found_numric = false;
+	for (int i = 0; i < input.length(); i++)
+	{
+		//validating the negative char
+		if (input[i] == '-' && i == 0)
+		{
+			continue;
+		}
+		//valdiating if chars are numbers or a point of frequence=1
+		if ((input[i] >= 48 && input[i] <= 57) || (input[i] == '.' && point == false))
+		{
+			if (input[i] == '.') point = true;
+			if (input[i] >= 48 && input[i] <= 57) found_numric = true;
+		}
+		else return false;
+	}
+	//checking if no numeric values
+	if (found_numric == false)
+	{
+		return false;
+	}
+	return true;
 }
 
 bool IsVariable (string input)
