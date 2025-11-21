@@ -222,6 +222,18 @@ void Output::DrawAssign(Point Left, int width, int height, string Text, bool Sel
 //		Decide the parameters that should be passed to each of them
 	
 //TODO: Add DrawConnector function
+void Output :: DrawConnector(Point start,Point end,bool Selected)
+{
+	if (Selected)
+	{
+		pWind->SetPen(UI.HighlightColor, 3); //highlited
+	}
+	else
+	{
+		pWind->SetPen(UI.DrawColor, 3);//normal
+	}
+	pWind->DrawLine(start.x, start.y, end.x, end.y);// Drawing the line
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 Output::~Output()
