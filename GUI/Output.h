@@ -32,7 +32,10 @@ public:
 	//TODO: Add similar functions for drawing all other statements.
 	//		e.g. DrawDeclareStat(.....), DrawCondtionalStat(......), DrawStart(......), DrawEnd(.......), ...etc
 	//		Decide the parameters that should be passed to each of them
-	
+	void Output::DrawCondionalStat(Point Center, int width, int height, string Text, bool Selected);
+	void Output::DrawStart(Point Center, int width, int height, bool Selected);
+	void Output::DrawEnd(Point Center, int width, int height, bool Selected);
+
 	//TODO: Add DrawConnector function
 	void DrawConnector(Point start, Point end,bool Selected=false);
 

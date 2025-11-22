@@ -216,7 +216,107 @@ int main()
 			case SELECT:
 				pOut->PrintMessage("Action: select action, Click anywhere");
 				break;
-			
+
+			case ADD_START:
+				pOut->PrintMessage("Action: add start, Click anywhere");
+				break;
+
+			case ADD_END:
+				pOut->PrintMessage("Action: add END, Click anywhere");
+				break;
+
+			case ADD_DECLARE_VARIABLE:
+				pOut->PrintMessage("Action: add DECLARE, Click anywhere");
+				break;
+
+			case ADD_VAR_ASSIGN:
+				pOut->PrintMessage("Action: add VAR ASSIGN statement , Click anywhere");
+				break;
+
+			case ADD_OPER_ASSIGN:
+				pOut->PrintMessage("Action: adD OPER ASSIGN , Click anywhere");
+				break;
+
+			case ADD_READ:
+				pOut->PrintMessage("Action: add read statement, Click anywhere");
+				break;
+
+			case ADD_WRITE:
+				pOut->PrintMessage("Action: add write statement, Click anywhere");
+				break;
+
+			case EDIT_STAT:
+				pOut->PrintMessage("Action: edit statement, Select a statement to edit");
+				break;
+
+			case DEL:
+				pOut->PrintMessage("Action: delete statement/connector, Select an item to delete");
+				break;
+
+			case COPY:
+				pOut->PrintMessage("Action: copy statement, Select a statement to copy");
+				break;
+
+			case CUT:
+				pOut->PrintMessage("Action: cut statement, Select a statement to cut");
+				break;
+
+			case PASTE:
+				pOut->PrintMessage("Action: paste statement, Click where to paste");
+				break;
+
+			case SAVE:
+				pOut->PrintMessage("Action: save graph to file, Enter file name");
+				break;
+
+			case LOAD:
+				pOut->PrintMessage("Action: load graph from file, Choose a file");
+				break;
+
+			case VALIDATE:
+				pOut->PrintMessage("Action: validate flowchart");
+				break;
+
+			case RUN:
+				pOut->PrintMessage("Action: run simulation");
+				break;
+
+			case DEBUG:
+				pOut->PrintMessage("Action: debug simulation");
+				break;
+
+			case GENCODE:
+				pOut->PrintMessage("Action: generate C++ code");
+				break;
+
+			case REVALIDATE:
+				pOut->PrintMessage("Action: revalidate flowchart");
+				break;
+
+			case RERUN:
+				pOut->PrintMessage("Action: rerun simulation");
+				break;
+
+			case UNDO:
+				pOut->PrintMessage("Action: undo last change");
+				break;
+
+			case REDO:
+				pOut->PrintMessage("Action: redo last undone change");
+				break;
+
+			case DRAWING_AREA:
+				pOut->PrintMessage("You clicked the drawing area");
+				break;
+
+			case OUTPUT_AREA:
+				pOut->PrintMessage("You clicked the output area");
+				break;
+
+			case SIM_TOOL:
+				pOut->PrintMessage("You clicked an empty place in the simulation toolbar");
+				break;
+
 			case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 				break;

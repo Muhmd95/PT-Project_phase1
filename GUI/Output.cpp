@@ -72,51 +72,51 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	//reoder them in Defs.h ==> enum DrawMenuItem
 
 	//DONE: Prepare images for each menu item and add it to the list
-	string MenuItemImages[DSN_ITM_CNT];
+	string MenuItemImagesdsn[DSN_ITM_CNT];
 
 	//START AND END
-	MenuItemImages[ITM_START] = "images\\Assign.jpg"; 
-	MenuItemImages[ITM_END] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_START] = "images\\Assign.jpg"; 
+	MenuItemImagesdsn[ITM_END] = "images\\Assign.jpg";
 
 	//DECLARE
-	MenuItemImages[ITM_DECLARE] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_DECLARE] = "images\\Assign.jpg";
 
 	//ASSIGN
-	MenuItemImages[ITM_VALUE_ASSIGN] = "images\\Assign.jpg";
-	MenuItemImages[ITM_VAR_ASSIGN] = "images\\Assign.jpg";
-	MenuItemImages[ITM_OPER_ASSIGN] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_VALUE_ASSIGN] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_VAR_ASSIGN] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_OPER_ASSIGN] = "images\\Assign.jpg";
 
 	//COND
-	MenuItemImages[ITM_COND] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_COND] = "images\\Assign.jpg";
 
 	//READ AND WRITE
-	MenuItemImages[ITM_READ] = "images\\Assign.jpg";
-	MenuItemImages[ITM_WRITE] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_READ] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_WRITE] = "images\\Assign.jpg";
 
 	//CONNECTOR
-	MenuItemImages[ITM_CONNECTOR] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_CONNECTOR] = "images\\Assign.jpg";
 
 	//SELECTION AND EDITING
-	MenuItemImages[ITM_SELECT] = "images\\Assign.jpg";
-	MenuItemImages[ITM_EDIT] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_SELECT] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_EDIT] = "images\\Assign.jpg";
 
 	//CLIPBOARD
-	MenuItemImages[ITM_COPY] = "images\\Assign.jpg";
-	MenuItemImages[ITM_CUT] = "images\\Assign.jpg";
-	MenuItemImages[ITM_PASTE] = "images\\Assign.jpg";
-	MenuItemImages[ITM_DEL] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_COPY] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_CUT] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_PASTE] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_DEL] = "images\\Assign.jpg";
 
 	//FILES
-	MenuItemImages[ITM_SAVE] = "images\\Assign.jpg";
-	MenuItemImages[ITM_LOAD] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_SAVE] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_LOAD] = "images\\Assign.jpg";
 
-	MenuItemImages[ITM_SWITCH_SIM] = "images\\Condition.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_SWITCH_SIM] = "images\\Condition.jpg";
+	MenuItemImagesdsn[ITM_EXIT] = "images\\Assign.jpg";
 
 	
 	//Draw menu item one image at a time
 	for(int i=0; i<DSN_ITM_CNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+		pWind->DrawImage(MenuItemImagesdsn[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 	//Draw a line under the toolbar
 	pWind->SetPen(RED, 2);
@@ -129,29 +129,29 @@ void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 {
 	UI.AppMode = SIMULATION;	//Simulation Mode
 	///TODO: add code to create the simulation tool bar
-	string MenuItemImages[SIM_ITM_CNT];
+	string MenuItemImagessim[SIM_ITM_CNT];
 	//valdiating
-	MenuItemImages[ITM_VALIDATE] = "images\\validate.jpg";
+	MenuItemImagessim[ITM_VALIDATE] = "images\\Assign.jpg";
 	//run
-	MenuItemImages[ITM_RUN] = "images\\run.jpg";
+	MenuItemImagessim[ITM_RUN] = "images\\Assign.jpg";
     //Dubug
-	MenuItemImages[ITM_DEBUG] = "images\\debug.jpg";
+	MenuItemImagessim[ITM_DEBUG] = "images\\Assign.jpg";
     //GENCODE
-	MenuItemImages[ITM_GENCODE] = "images\\Gend-code.jpg";
+	MenuItemImagessim[ITM_GENCODE] = "images\\Assign.jpg";
     //REVALIDATE
-	MenuItemImages[ITM_REVALIDATE]= "images\\revalidate.jpg";
+	MenuItemImagessim[ITM_REVALIDATE]= "images\\Assign.jpg";
     //Rerun
-	MenuItemImages[ITM_RERUN]= "images\\rerun.jpg";
+	MenuItemImagessim[ITM_RERUN]= "images\\Assign.jpg";
     //undo
-	MenuItemImages[ITM_UNDO] = "images\\undo.jpg";
+	MenuItemImagessim[ITM_UNDO] = "images\\Assign.jpg";
     //Redo
-	MenuItemImages[ITM_REDO] = "images\\redo.jpg";
+	MenuItemImagessim[ITM_REDO] = "images\\Assign.jpg";
     //switch
-	MenuItemImages[ITM_SWITCH_DSN_MODE]= "images\\switch.jpg";
+	MenuItemImagessim[ITM_SWITCH_DSN_MODE]= "images\\Condition.jpg";
 	//Draw menu item one image at a time
 
 	for (int i = 0; i < SIM_ITM_CNT; i++)
-		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+		pWind->DrawImage(MenuItemImagessim[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 	//Draw a line under the toolbar
 	pWind->SetPen(RED, 2);
@@ -220,6 +220,44 @@ void Output::DrawAssign(Point Left, int width, int height, string Text, bool Sel
 //TODO: Add similar functions for drawing all other statements.
 //		e.g. DrawDeclareStat(.....), DrawCondtionalStat(......), DrawStart(......), DrawEnd(.......), ...etc
 //		Decide the parameters that should be passed to each of them
+
+void Output::DrawCondionalStat(Point Center, int width, int height, string Text, bool Selected)
+{
+	if (Selected)
+		pWind->SetPen(UI.HighlightColor, 3);
+	else
+		pWind->SetPen(UI.DrawColor, 3);
+	int cx = Center.x;
+	int cy = Center.y;
+	int X[4] = { cx, cx + width / 2, cx, cx - width / 2 };
+	int Y[4] = { cy - height / 2, cy, cy + height / 2, cy };
+	pWind->DrawPolygon(X, Y, 4);
+	pWind->SetPen(BLACK, 2);
+	pWind->DrawString(cx - width/ 4, cy, Text);
+}
+void Output::DrawStart(Point Center, int width, int height, bool Selected)
+{
+	if (Selected)
+		pWind->SetPen(UI.HighlightColor, 3);
+	else
+		pWind->SetPen(UI.DrawColor, 3);
+	pWind->DrawEllipse(Center.x - width / 2, Center.y - height / 2, Center.x + width / 2, Center.y + height / 2);
+
+	pWind->SetPen(BLACK, 2);
+	pWind->DrawString(Center.x - width/4 , Center.y , "START");
+}
+void Output::DrawEnd(Point Center, int width, int height, bool Selected)
+{
+	if (Selected)
+		pWind->SetPen(UI.HighlightColor, 3);
+	else
+		pWind->SetPen(UI.DrawColor, 3);
+
+	pWind->DrawEllipse(Center.x - width / 2, Center.y - height / 2, Center.x + width / 2, Center.y + height / 2);
+
+	pWind->SetPen(BLACK, 2);
+	pWind->DrawString(Center.x - width/4, Center.y, "END");
+}
 	
 //TODO: Add DrawConnector function
 void Output :: DrawConnector(Point start,Point end,bool Selected)

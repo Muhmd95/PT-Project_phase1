@@ -181,7 +181,7 @@ ActionType Input::GetUserAction() const
 			case ITM_REDO: return REDO;
 			case ITM_SWITCH_DSN_MODE: return SWITCH_DSN_MODE;
 
-			default: return DSN_TOOL;
+			default: return SIM_TOOL;
 			}
 		}
 		//[2] User clicks on the drawing area
