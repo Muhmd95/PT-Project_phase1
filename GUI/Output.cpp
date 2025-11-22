@@ -60,6 +60,7 @@ void Output::CreateStatusBar()
 //DONE: Complete this function
 void Output::CreateDesignToolBar() //Draws the Design Menu
 {
+	ClearToolBar();
 	UI.AppMode = DESIGN;	//Design Mode
 	
 	//fill the tool bar 
@@ -127,6 +128,8 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 //DONE: Complete this function
 void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 {
+
+	ClearToolBar();
 	UI.AppMode = SIMULATION;	//Simulation Mode
 	///TODO: add code to create the simulation tool bar
 	string MenuItemImagessim[SIM_ITM_CNT];
@@ -171,6 +174,13 @@ void Output::ClearDrawArea()
 	pWind->SetPen(RED, 2);
 	pWind->SetBrush(WHITE);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.DrawingAreaWidth, UI.height - UI.StatusBarHeight);
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+void Output::ClearToolBar()
+{
+	pWind->SetPen(WHITE, 2);
+	pWind->SetBrush(WHITE);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::ClearOutputBar()
