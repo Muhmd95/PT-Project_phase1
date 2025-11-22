@@ -12,50 +12,51 @@ enum  MODE	//Modes of operation
 // TODO: Add any action type here
 enum ActionType // The actions supported
 {
-	ADD_START, //Add start statement
-	ADD_END,   //Add end statement
-	ADD_DECLARE_VARIABLE, // Add  declare variable statement
-	ADD_VALUE_ASSIGN, //Add value assignment statement
-	ADD_VAR_ASSIGN,	  //Add variable assignment statement
-	ADD_OPER_ASSIGN,  //Add operator assignment statement
-	ADD_CONDITION,    //Add a conditional statement (for if and while-loop statements)
-	ADD_READ,  //Add read statement
-	ADD_WRITE, //Addd write statemetn
+	ADD_START, //Add start statement DONE
+	ADD_END,   //Add end statement DONE
+	ADD_DECLARE_VARIABLE, // Add  declare variable statement DONE
+	ADD_VALUE_ASSIGN, //Add value assignment statement done
+	ADD_VAR_ASSIGN,	  //Add variable assignment statement DONE
+	ADD_OPER_ASSIGN,  //Add operator assignment statement DONE
+	ADD_CONDITION,    //Add a conditional statement (for if and while-loop statements) done
+	ADD_READ,  //Add read statement done
+	ADD_WRITE, //Addd write statemetn done
 
-	ADD_CONNECTOR, //Add a connector between two statements
+	ADD_CONNECTOR, //Add a connector between two statements done
 	
-	SELECT,		//Select a statement, a connector
-	EDIT_STAT,	//Edit a statement
+	SELECT,		//Select a statement, a connector done
+	EDIT_STAT,	//Edit a statement done
 
-	DEL,   //Delete a figure
-	COPY,  //Copy a figure
-	CUT,   //Cut a figure
-	PASTE, //Paste a figure
+	DEL,   //Delete a figure done
+	COPY,  //Copy a figure done
+	CUT,   //Cut a figure done
+	PASTE, //Paste a figure done
 
-	SAVE,		//Save the whole graph to a file
-	LOAD,		//Load a graph from a file
+	SAVE,		//Save the whole graph to a file done
+	LOAD,		//Load a graph from a file done
 
-	SWITCH_DSN_MODE,	//Switch to Design mode
-	SWITCH_SIM_MODE,	//Switch to simulatiom mode
+	SWITCH_DSN_MODE,	//Switch to Design mode done 
+	SWITCH_SIM_MODE,	//Switch to simulatiom mode DONE
 
-	EXIT,		//Exit the application
+	EXIT,		//Exit the application done
 
 
 	//TODO: ADD THE ACTIONS OF SIMULATION MODE
-	VALIDATE,	    //Validate
-	RUN,	        //Run
-	DEBUG,         //debug
-	GENCODE,      //generate c++ code
-	REVALIDATE,  // revalidate
-	RERUN,      //rerun
-	UNDO,      //undo
-	REDO,     //redo
+	VALIDATE,	    //Validate done
+	RUN,	        //Run done
+	DEBUG,         //debug done
+	GENCODE,      //generate c++ code done
+	REVALIDATE,  // revalidate done
+	RERUN,      //rerun done
+	UNDO,      //undo done
+	REDO,     //redo done
 	
 
-	DRAWING_AREA,  //A click on the drawing area
-	OUTPUT_AREA,   //A click on the output area
-	DSN_TOOL,	   //A click on an empty place in the design tool bar
-	STATUS 		   //A click on the status bar
+	DRAWING_AREA,  //A click on the drawing area done
+	OUTPUT_AREA,   //A click on the output area done
+	SIM_TOOL,		//a click on an empty place in sim tool bar done
+	DSN_TOOL,	   //A click on an empty place in the design tool bar done
+	STATUS 		   //A click on the status bar done
 };
 
 // TODO: you should add more items
