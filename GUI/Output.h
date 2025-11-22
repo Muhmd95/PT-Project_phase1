@@ -34,6 +34,7 @@ public:
 	//		Decide the parameters that should be passed to each of them
 	
 	//TODO: Add DrawConnector function
+	void DrawConnector(Point start, Point end,bool Selected=false);
 
 	~Output();
 };
