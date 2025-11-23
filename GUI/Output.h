@@ -41,7 +41,9 @@ public:
 	void Output::DrawEnd(Point Center, int width, int height,string , bool Selected=false);
 
 	//TODO: Add DrawConnector function
-	void DrawConnector(Point start, Point end,bool Selected=false);
+	void Output::DrawConnector(Point start, Point end,bool Selected=false);
+	
+	void Drawdouble(Point Center, double d); // added to draw double
 
 	~Output();
 };
