@@ -215,6 +215,9 @@ int main()
 	// 2- Draw that string in location (400, 200) --> using the already-implemented Output::DrawString(...) fn
 	////////////
 
+
+
+
 	pIn->GetPointClicked(P);	//Wait for any click
 	pOut->ClearDrawArea();
 

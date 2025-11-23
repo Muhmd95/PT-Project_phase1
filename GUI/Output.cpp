@@ -4,8 +4,8 @@
 Output::Output()
 {
 	//Initialize user interface parameters
-	UI.width = 1200;
-	UI.height = 620;
+	UI.width = 1400;
+	UI.height = 700;
 	UI.wx = 15;
 	UI.wy =15;
 
@@ -13,7 +13,7 @@ Output::Output()
 
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 50;   // I edited the width of the items
+	UI.MenuItemWidth = 65;   // I edited the width of the items
 	UI.DrawingAreaWidth = 0.75 * UI.width;
 
 	UI.DrawColor = BLUE;
