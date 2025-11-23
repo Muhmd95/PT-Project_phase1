@@ -60,7 +60,7 @@ void Output::CreateStatusBar()
 //DONE: Complete this function
 void Output::CreateDesignToolBar() //Draws the Design Menu
 {
-	ClearToolBar();
+	ClearToolBar(); // created to clear the tool bar
 	UI.AppMode = DESIGN;	//Design Mode
 	
 	//fill the tool bar 
@@ -129,7 +129,7 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 {
 
-	ClearToolBar();
+	ClearToolBar();  // created to clear the toolbar
 	UI.AppMode = SIMULATION;	//Simulation Mode
 	///TODO: add code to create the simulation tool bar
 	string MenuItemImagessim[SIM_ITM_CNT];
@@ -224,7 +224,7 @@ void Output::DrawAssign(Point Left, int width, int height, string Text, bool Sel
 		
 	//Write statement text
 	pWind->SetPen(BLACK, 2);
-	pWind->DrawString(Left.x+width/4, Left.y + height/4, Text);
+	pWind->DrawString(Left.x+width/8, Left.y + height/3, Text);
 }
 
 //TODO: Add similar functions for drawing all other statements.
@@ -245,6 +245,29 @@ void Output::DrawCondionalStat(Point Center, int width, int height, string Text,
 	pWind->SetPen(BLACK, 2);
 	pWind->DrawString(cx - width/ 4, cy, Text);
 }
+
+void Output::DrawParallelogram(Point Center, int width, int height, string Text, bool Selected)
+{
+	if (Selected)
+		pWind->SetPen(UI.HighlightColor, 3);
+	else
+		pWind->SetPen(UI.DrawColor, 3);
+	int X[4] = { Center.x + width / 4, Center.x + width + width / 4, Center.x + width, Center.x };
+	int Y[4] = { Center.y, Center.y, Center.y + height, Center.y + height };
+	pWind->DrawPolygon(X, Y, 4);
+	pWind->SetPen(BLACK, 2);
+	pWind->DrawString(Center.x + width / 3, Center.y + height / 3, Text);
+}
+void Output::DrawRead(Point Center, int width, int height, bool Selected)
+{
+	DrawParallelogram(Center, width, height, "Read", Selected);
+}
+void Output::DrawWrite(Point Center, int width, int height, bool Selected)
+{
+	DrawParallelogram(Center, width, height, "Write", Selected);
+}
+
+
 void Output::DrawStart(Point Center, int width, int height, bool Selected)
 {
 	if (Selected)
