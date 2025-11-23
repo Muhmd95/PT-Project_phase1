@@ -37,6 +37,7 @@ public:
 	void Output::DrawEnd(Point Center, int width, int height, bool Selected);
 
 	//TODO: Add DrawConnector function
+	void DrawConnector(Point start, Point end,bool Selected=false);
 
 	~Output();
 };
