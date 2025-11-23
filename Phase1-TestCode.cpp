@@ -99,6 +99,8 @@ int main()
 	
 	////////////
 	//TODO: Add code to draw different (Conditional) statements here in ALL STATES
+	pIn->GetPointClicked(P);
+	pOut->DrawCondionalStat(P,100,100,"ok",true);
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
