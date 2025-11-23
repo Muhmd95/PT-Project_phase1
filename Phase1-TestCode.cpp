@@ -23,14 +23,55 @@ int main()
 	pIn->GetPointClicked(P);	//Wait for any click
 
 	////////////
-	//TODO: Add code here to 
+	//Done 
 	// 1- Read a (string) from the user --> just call the already impemented Input::GetString(...) fn
+	pOut->PrintMessage("Please Enter a Value");
+	string Read_Value_Fromuser =pIn->GetString(pOut);
 	// 2- Pass this string to IsValue(...) helper function 
+	bool check_value = IsValue(Read_Value_Fromuser);
 	// 3- Print a message indicating its output (whether it's a value or not)
-	// 4- -- REPEAT the same previous 3 steps to test: IsVariable(...) helper function
-	// 5- -- REPEAT the same first 3 steps to test: ValueORVariable(...) helper function
-	////////////
-
+	if (check_value)
+	{
+		pOut->PrintMessage("The Entered Value Is Valid");
+	}
+	else
+	{
+		pOut->PrintMessage("The Entered Value Is Invalid");
+	}
+	/////////////////////////////////////////////////////////////////////
+	// Test IsVariable
+	pIn->GetPointClicked(P);
+	pOut->PrintMessage("Please Enter a Variable");
+	string Read_Variable_Fromuser = pIn->GetString(pOut);
+	bool check_variable = IsVariable(Read_Variable_Fromuser);
+	if (check_variable)
+	{
+		pOut->PrintMessage("The Entered Variable Is Valid");
+	}
+	else
+	{
+		pOut->PrintMessage("The Entered Variable Is Invalid");
+	}
+	//////////////////////////////////////////////////////////
+	// test Isvarorval
+	pIn->GetPointClicked(P);
+	pOut->PrintMessage("Please Enter a Value or variable");
+	string Read_Input_Fromuser = pIn->GetString(pOut);
+	OpType Val_Or_var = ValueOrVariable(Read_Input_Fromuser);
+	if (Val_Or_var == VALUE_OP)
+	{
+		pOut->PrintMessage("The Entered String Is Value");
+	}
+	else if (Val_Or_var == VARIABLE_OP)
+	{
+		pOut->PrintMessage("The Entered String Is Variable");
+	}
+	else
+	{
+		pOut->PrintMessage("Invalid Input");
+	}
+	//////////////////////////////////////////
+	pIn->GetPointClicked(P);
 	//Starting the input and output classes test
 	pOut->PrintMessage("This demo is to test input and output classes, Click anywhere to start the test");
 	pIn->GetPointClicked(P);	//Wait for any click
@@ -112,6 +153,7 @@ int main()
 	
 	////////////
 	//TODO: Add code to draw different (Read) statements here in ALL STATES
+	
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
