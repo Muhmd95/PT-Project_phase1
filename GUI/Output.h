@@ -21,6 +21,7 @@ public:
 
 	void ClearStatusBar();	//Clears the status bar
 	void ClearDrawArea();	//Clears the drawing area
+	void ClearToolBar();	// clear tool bar 
 	void ClearOutputBar(); //Clears the Output bar
 	
 	void PrintMessage(string msg);	//Prints a message on Status bar
