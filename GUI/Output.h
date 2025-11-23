@@ -34,8 +34,11 @@ public:
 	//		e.g. DrawDeclareStat(.....), DrawCondtionalStat(......), DrawStart(......), DrawEnd(.......), ...etc
 	//		Decide the parameters that should be passed to each of them
 	void Output::DrawCondionalStat(Point Center, int width, int height, string Text, bool Selected=false);
-	void Output::DrawStart(Point Center, int width, int height,string , bool Selected=false);
-	void Output::DrawEnd(Point Center, int width, int height,string, bool Selected=false);
+	void Output::DrawParallelogram(Point Center, int width, int height, string Text, bool Selected=false);
+	void Output::DrawRead(Point Center, int width, int height, bool Selected=false);
+	void DrawWrite(Point Center, int width, int height, bool Selected=false);
+	void Output::DrawStart(Point Center, int width, int height, bool Selected=false);
+	void Output::DrawEnd(Point Center, int width, int height, bool Selected=false);
 
 	//TODO: Add DrawConnector function
 	void DrawConnector(Point start, Point end,bool Selected=false);
