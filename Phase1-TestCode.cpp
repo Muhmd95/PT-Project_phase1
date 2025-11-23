@@ -87,20 +87,53 @@ int main()
 	//Note: for other type of assignment, you can use the same draw assignment function but passing a different text
 
 	////////////
-	//TODO: Add code to draw other types of assignment statements (Variable and Operator) here in ALL STATES
+	//DONE: Add code to draw other types of assignment statements (Variable and Operator) here in ALL STATES
 	////////////
-	
+	pOut->PrintMessage("Drawing Simple Assignment statements in ALL STATES, Click to continue");
+
+	//Drawing (normal) VARIABLE assignment statement
+	P.x = 100;	P.y = 100;
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, " X = Y ");
+
+	//Drawing (highlighted) VARIABLE assignment statement
+	P.x = 300;	P.y = 100;
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X = Z", true);
+
+	///////////////////////////////////////////////////////////
+
+	//Drawing edited (normal) OPERATOR assignment statement
+	P.x = 100;	P.y = 300;
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X =  5 * Y");
+
+	// Drawing edited(normal) OPERATOR assignment statement
+	P.x = 100;	P.y = 400;
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X =  60-57");
+
+	///////////////////////////////////////////////////////////
+
+	//Drawing (highlighted) OPERATOR assignment statement
+	P.x = 300;	P.y = 300;
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X = 6 * Z", true);
+
+	//Drawing (highlighted) OPERATOR assignment statement
+	P.x = 300;	P.y = 400;
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X = 96 - 2", true);
+
 	pIn->GetPointClicked(P);	//Wait for any click
 	pOut->ClearDrawArea();
+
 
 	/// 2.3- Conditional statement test
 	//Drawing Conditional statements in all posible states
 	pOut->PrintMessage("Drawing Conditional Statement in ALL STATES, Click to continue");
 	
 	////////////
-	//TODO: Add code to draw different (Conditional) statements here in ALL STATES
-	pIn->GetPointClicked(P);
-	pOut->DrawCondionalStat(P,100,100,"ok",true);
+	//DONE: Add code to draw different (Conditional) statements here in ALL STATES
+	P.x = 100; P.y = 200;
+	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI,"O");
+
+	P.x = 300; P.y = 200;
+	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI, "O", true);
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
@@ -111,8 +144,20 @@ int main()
 	pOut->PrintMessage("Drawing Read Statement in ALL STATES, Click to continue");
 	
 	////////////
-	//TODO: Add code to draw different (Read) statements here in ALL STATES
+	//DONE: Add code to draw different (Read) statements here in ALL STATES
 	////////////
+	P.x = 100; P.y = 100;
+	pOut->DrawRead(P, 100 , 50 );
+
+	P.x = 300; P.y = 100;
+	pOut->DrawRead(P, 100 , 50 , true);
+
+	P.x = 100; P.y = 200;
+	pOut->DrawParallelogram(P, 100 , 50, "", true);
+
+	P.x = 300; P.y = 200;
+	pOut->DrawParallelogram(P, 100 , 50 , "");
+
 
 	pIn->GetPointClicked(P);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -122,8 +167,14 @@ int main()
 	pOut->PrintMessage("Drawing Write Statement in ALL STATES, Click to continue");
 	
 	////////////
-	//TODO: Add code to draw different (Write) statements here in ALL STATES
+	//DONE: Add code to draw different (Write) statements here in ALL STATES
 	////////////
+	P.x = 100; P.y = 200;
+	pOut->DrawWrite(P, 100, 50);
+
+	P.x = 300; P.y = 200;
+	pOut->DrawWrite(P, 100, 50, true);
+
 
 	pIn->GetPointClicked(P);	//Wait for any click
 	pOut->ClearDrawArea();
