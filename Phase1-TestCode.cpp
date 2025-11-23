@@ -261,26 +261,17 @@ int main()
 	pIn->GetPointClicked(P);	//Wait for any click
 	pOut->ClearDrawArea();
 
-	///2.2- Variable assignment & single operator assignment
-	pOut->PrintMessage("Drawing other Assignment statements in ALL STATES, Click to continue");
-
-	////////////
-
-	pIn->GetPointClicked(P);	//Wait for any click
-	pOut->ClearDrawArea();
-
 
 	/// 2.7- Connector test
 	//Drawing Connector in all posible states
 	pOut->PrintMessage("Drawing Connector in Normal and Highlighted STATES, Click to continue");
 	
 	////////////
-	//TODO: Add code to draw different (Connectors) here:  Normal and Highlighted
+	//DONE: Add code to draw different (Connectors) here:  Normal and Highlighted
 	Point P2;//creating another point to be end point of connector
-	pIn->GetPointClicked(P2);
 	// The Normal connector
 	P.x = 100; P.y = 300; //start point
-	P2.x = 100; P2.y = 500; // end point
+	pIn->GetPointClicked(P2); // end point
 	pOut->DrawConnector(P,P2);
     
 	//the highlited connector 
@@ -337,7 +328,7 @@ int main()
 	ActionType ActType;
 	
 	////////////
-	//TODO:  You must add a case for EACH action in the following (switch case)
+	//DONE:  You must add a case for EACH action in the following (switch case)
 	////////////
 
 	do
