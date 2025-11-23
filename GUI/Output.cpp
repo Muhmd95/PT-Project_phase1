@@ -268,7 +268,7 @@ void Output::DrawWrite(Point Center, int width, int height, bool Selected)
 }
 
 
-void Output::DrawStart(Point Center, int width, int height, bool Selected)
+void Output::DrawStart(Point Center, int width, int height,string text, bool Selected)
 {
 	if (Selected)
 		pWind->SetPen(UI.HighlightColor, 3);
