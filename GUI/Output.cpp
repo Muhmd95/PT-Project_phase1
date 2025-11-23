@@ -245,7 +245,7 @@ void Output::DrawCondionalStat(Point Center, int width, int height, string Text,
 	pWind->SetPen(BLACK, 2);
 	pWind->DrawString(cx - width/ 4, cy, Text);
 }
-void Output::DrawStart(Point Center, int width, int height, bool Selected)
+void Output::DrawStart(Point Center, int width, int height,string text, bool Selected)
 {
 	if (Selected)
 		pWind->SetPen(UI.HighlightColor, 3);
@@ -254,9 +254,9 @@ void Output::DrawStart(Point Center, int width, int height, bool Selected)
 	pWind->DrawEllipse(Center.x - width / 2, Center.y - height / 2, Center.x + width / 2, Center.y + height / 2);
 
 	pWind->SetPen(BLACK, 2);
-	pWind->DrawString(Center.x - width/4 , Center.y , "START");
+	pWind->DrawString(Center.x - width/8 , Center.y-height/4 , text);
 }
-void Output::DrawEnd(Point Center, int width, int height, bool Selected)
+void Output::DrawEnd(Point Center, int width, int height, string text, bool Selected)
 {
 	if (Selected)
 		pWind->SetPen(UI.HighlightColor, 3);
@@ -266,10 +266,10 @@ void Output::DrawEnd(Point Center, int width, int height, bool Selected)
 	pWind->DrawEllipse(Center.x - width / 2, Center.y - height / 2, Center.x + width / 2, Center.y + height / 2);
 
 	pWind->SetPen(BLACK, 2);
-	pWind->DrawString(Center.x - width/4, Center.y, "END");
+	pWind->DrawString(Center.x - width/8, Center.y-height/4, text);
 }
 	
-//TODO: Add DrawConnector function
+//DONE: Add DrawConnector function
 void Output :: DrawConnector(Point start,Point end,bool Selected)
 {
 	if (Selected)
