@@ -290,12 +290,12 @@ int main()
 	//Note: the function of this drawing is already implemented in Output class , you only need to call it
 
 	////////////
-	//TODO: Add code to: 
+	//DONE: Add code to: 
 	// 1- Get a String from the user --> using the already-implemented Input::GetString(...) fn
 	// 2- Draw that string in location (400, 200) --> using the already-implemented Output::DrawString(...) fn
 	////////////
-
-
+	string string_draw = pIn->GetString(pOut);
+	pOut->DrawString(400, 200, string_draw);
 
 
 	pIn->GetPointClicked(P);	//Wait for any click
@@ -312,9 +312,22 @@ int main()
 	////////////
 	//TODO: Add code here to 
 	// 1- Read a (double value) from the user and print it
+	double value = pIn->Input::GetValue(pOut);
+	Point p1 = { 100 ,200 };
+	pOut->Drawdouble(p1, value);
+
 	// 2- Read a (variable name) from the user and print it
+	string variable = pIn->GetVariable(pOut);
+	pOut->DrawString(100, 300, variable);
+
 	// 3- Read an (arithmatic operator) from the user and print it
+	char ArithOp = pIn->GetArithOperator(pOut);
+	string ari(1, ArithOp);
+	pOut->DrawString(300, 200, ari);
+
 	// 4- Read a (comparison operator) from the user and print it
+	string CompOp = pIn->GetCompOperator(pOut);
+	pOut->DrawString(300, 300, CompOp);
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
