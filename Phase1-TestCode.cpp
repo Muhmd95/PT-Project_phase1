@@ -23,14 +23,55 @@ int main()
 	pIn->GetPointClicked(P);	//Wait for any click
 
 	////////////
-	//TODO: Add code here to 
+	//Done 
 	// 1- Read a (string) from the user --> just call the already impemented Input::GetString(...) fn
+	pOut->PrintMessage("Please Enter a Value");
+	string Read_Value_Fromuser =pIn->GetString(pOut);
 	// 2- Pass this string to IsValue(...) helper function 
+	bool check_value = IsValue(Read_Value_Fromuser);
 	// 3- Print a message indicating its output (whether it's a value or not)
-	// 4- -- REPEAT the same previous 3 steps to test: IsVariable(...) helper function
-	// 5- -- REPEAT the same first 3 steps to test: ValueORVariable(...) helper function
-	////////////
-
+	if (check_value)
+	{
+		pOut->PrintMessage("The Entered Value Is Valid");
+	}
+	else
+	{
+		pOut->PrintMessage("The Entered Value Is Invalid");
+	}
+	/////////////////////////////////////////////////////////////////////
+	// Test IsVariable
+	pIn->GetPointClicked(P);
+	pOut->PrintMessage("Please Enter a Variable");
+	string Read_Variable_Fromuser = pIn->GetString(pOut);
+	bool check_variable = IsVariable(Read_Variable_Fromuser);
+	if (check_variable)
+	{
+		pOut->PrintMessage("The Entered Variable Is Valid");
+	}
+	else
+	{
+		pOut->PrintMessage("The Entered Variable Is Invalid");
+	}
+	//////////////////////////////////////////////////////////
+	// test Isvarorval
+	pIn->GetPointClicked(P);
+	pOut->PrintMessage("Please Enter a Value or variable");
+	string Read_Input_Fromuser = pIn->GetString(pOut);
+	OpType Val_Or_var = ValueOrVariable(Read_Input_Fromuser);
+	if (Val_Or_var == VALUE_OP)
+	{
+		pOut->PrintMessage("The Entered String Is Value");
+	}
+	else if (Val_Or_var == VARIABLE_OP)
+	{
+		pOut->PrintMessage("The Entered String Is Variable");
+	}
+	else
+	{
+		pOut->PrintMessage("Invalid Input");
+	}
+	//////////////////////////////////////////
+	pIn->GetPointClicked(P);
 	//Starting the input and output classes test
 	pOut->PrintMessage("This demo is to test input and output classes, Click anywhere to start the test");
 	pIn->GetPointClicked(P);	//Wait for any click
@@ -185,7 +226,44 @@ int main()
 	pOut->PrintMessage("Drawing Start & End Statements in ALL STATES, Click to continue");
 	
 	////////////
-	//TODO: Add code to draw different (Start & End) statements here  in ALL STATES
+	//Done: Add code to draw different (Start & End) statements here  in ALL STATES
+
+	//Drawing (normal) (empty) Start OR End statement --> STATE 1
+	P.x = 100;	P.y = 100;
+	pOut->DrawStart(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "  ");
+
+	//Drawing (highlighted) (empty) Start OR End statement --> STATE 2
+	P.x = 300;	P.y = 100;
+	pOut->DrawStart(P, UI.ASSGN_WDTH, UI.ASSGN_HI, " ", true);
+
+	//Drawing a resized empty start or end statement
+	P.x = 100;	P.y = 200;
+	pOut->DrawStart(P, 100, UI.ASSGN_HI, "  ");
+
+	//Drawing edited (normal) (non-empty) Start statement --> STATE 3
+	P.x = 100;	P.y = 300;
+	pOut->DrawStart(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "Start");
+
+	//Drawing (highlighted) (non-empty) Start statement --> STATE 4
+	P.x = 300;	P.y = 300;
+	pOut->DrawStart(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "Start", true);
+
+	//Drawing edited (normal) (non_empty) End statment ->State->3(end)
+	P.x = 100;	P.y = 400;
+	pOut->DrawEnd(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "End");
+
+	//Drawing (highlighted) (non-empty) End statement ->State->4(end)
+	P.x = 300;	P.y = 200;
+	pOut->DrawEnd(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "End",true);
+
+	///////////////////////////////////////////////////////////////////
+
+	pIn->GetPointClicked(P);	//Wait for any click
+	pOut->ClearDrawArea();
+
+	///2.2- Variable assignment & single operator assignment
+	pOut->PrintMessage("Drawing other Assignment statements in ALL STATES, Click to continue");
+
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
@@ -198,6 +276,17 @@ int main()
 	
 	////////////
 	//TODO: Add code to draw different (Connectors) here:  Normal and Highlighted
+	Point P2;//creating another point to be end point of connector
+	pIn->GetPointClicked(P2);
+	// The Normal connector
+	P.x = 100; P.y = 300; //start point
+	P2.x = 100; P2.y = 500; // end point
+	pOut->DrawConnector(P,P2);
+    
+	//the highlited connector 
+	P.x = 200; P.y = 300;
+	P2.x = 400; P2.y = 300;
+	pOut->DrawConnector(P, P2, true);
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
