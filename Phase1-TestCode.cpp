@@ -271,13 +271,13 @@ int main()
 	Point P2;//creating another point to be end point of connector
 	// The Normal connector
 	P.x = 100; P.y = 300; //start point
-	pIn->GetPointClicked(P2); // end point
+	P2.x = 100; P2.y = 500; // end point
 	pOut->DrawConnector(P,P2);
     
 	//the highlited connector 
-	P.x = 200; P.y = 300;
-	P2.x = 400; P2.y = 300;
-	pOut->DrawConnector(P, P2, true);
+	//P.x = 200; P.y = 300;
+	//P2.x = 400; P2.y = 300;
+	//pOut->DrawConnector(P, P2, true);
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click
