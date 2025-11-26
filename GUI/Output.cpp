@@ -310,22 +310,26 @@ void Output :: DrawConnector(Point start,Point end,bool Selected)
 		pWind->DrawTriangle(end.x - 10, end.y, end.x + 10, end.y, end.x, end.y + 15);
 
 	}
-	// case 2 horizontal connector points to left
-	else if (start.x > end.x && end.y == start.y)
+	// case 2 horizontal connector points to left then down
+	else if (start.x > end.x && end.y > start.y)
 	{
-		pWind->DrawLine(start.x, start.y, end.x, end.y);
-		pWind->DrawTriangle(end.x, end.y + 10, end.x, end.y - 10, end.x - 15, end.y);
+		pWind->DrawLine(start.x, start.y, end.x, start.y);
+		pWind->DrawLine(end.x, start.y, end.x, end.y);
+		pWind->DrawTriangle(end.x - 10, end.y, end.x + 10, end.y, end.x, end.y + 15);
+		
 
 	}
-	// case 2.1 points right 
-	else if (start.x < end.x && end.y == start.y)
+	// case 2.1 points right then down
+	else if (start.x < end.x && end.y > start.y)
 	{
-		pWind->DrawLine(start.x, start.y, end.x, end.y);
-		pWind->DrawTriangle(end.x, end.y - 10, end.x, end.y + 10, end.x + 15, end.y);
+		pWind->DrawLine(start.x, start.y, end.x, start.y);
+		pWind->DrawLine(end.x, start.y, end.x, end.y);
+		pWind->DrawTriangle(end.x - 10, end.y, end.x + 10, end.y, end.x, end.y + 15);
+		
 
 	}
 	//case 3 loop case 
-	else if (end.y < start.y)
+	else if (end.y <= start.y)
 	{
 		if (end.x < start.x)// left > up >right
 		{

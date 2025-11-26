@@ -269,17 +269,37 @@ int main()
 	////////////
 	//DONE: Add code to draw different (Connectors) here:  Normal and Highlighted
 	Point P2;//creating another point to be end point of connector
-	// The Normal connector
-	P.x = 100; P.y = 300; //start point
-	P2.x = 100; P2.y = 500; // end point
+	// The Normal connector (conditional )
+	P.x = 100; P.y = 100; //start point
+	P2.x = 50; P2.y = 300; // end point
 	pOut->DrawConnector(P,P2);
-    
-	//the highlited connector 
-	//P.x = 200; P.y = 300;
-	//P2.x = 400; P2.y = 300;
-	//pOut->DrawConnector(P, P2, true);
-	////////////
+	// Highlited conditional right
+	Point P3;Point P4;
+	P3.x = 300; P3.y = 100;
+	P4.x = 350; P4.y = 300;
+	pOut->DrawConnector(P3, P4, true);
+	// Normal and highlited vertical connector 
+	Point P5, P6;
+	P5.x = 400; P5.y = 100;
+	P6.x = 400; P5.y = 300;
+	pOut->DrawConnector(P5, P6);
 
+	Point P7, P8;
+	P7.x = 500; P7.y = 100;
+	P8.x = 500; P8.y = 300;
+	pOut->DrawConnector(P7, P8,true);
+	
+	//loop connector left
+	Point p9, p10;
+	p9 = { 100, 600 }; p10 = { 90,450 };
+	pOut->DrawConnector(p9, p10, true);
+	// right normal
+	Point p11, p12;
+	p11 = { 300, 600 }; p12 = { 320,450 };
+	pOut->DrawConnector(p11, p12);
+
+
+	
 	pIn->GetPointClicked(P);	//Wait for any click
 	pOut->ClearDrawArea();
 
