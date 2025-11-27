@@ -13,7 +13,7 @@ Output::Output()
 
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 55;
-	UI.MenuItemWidth = 60;   // I edited the width of the items
+	UI.MenuItemWidth = 63;   // I edited the width of the items
 	UI.DrawingAreaWidth = 0.75 * UI.width;
 
 	UI.DrawColor = BLUE;
@@ -76,46 +76,46 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	string MenuItemImagesdsn[DSN_ITM_CNT];
 
 	//START AND END
-	MenuItemImagesdsn[ITM_START] = "images\\start.jpg"; 
-	MenuItemImagesdsn[ITM_END] = "images\\end.jpg";
+	MenuItemImagesdsn[ITM_START] = "images\\Start.jpg"; 
+	MenuItemImagesdsn[ITM_END] = "images\\End.jpg";
 
 	//DECLARE
-	MenuItemImagesdsn[ITM_DECLARE] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_DECLARE] = "images\\Declare.jpg";
 
 	//ASSIGN
-	MenuItemImagesdsn[ITM_VALUE_ASSIGN] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_VAR_ASSIGN] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_OPER_ASSIGN] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_VALUE_ASSIGN] = "images\\VALAssign.jpg";
+	MenuItemImagesdsn[ITM_VAR_ASSIGN] = "images\\VARAssign.jpg";
+	MenuItemImagesdsn[ITM_OPER_ASSIGN] = "images\\OPAssign.jpg";
 
 	//COND
-	MenuItemImagesdsn[ITM_COND] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_COND] = "images\\Condition.jpg";
 
 	//READ AND WRITE
-	MenuItemImagesdsn[ITM_READ] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_WRITE] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_READ] = "images\\Read.jpg";
+	MenuItemImagesdsn[ITM_WRITE] = "images\\Write.jpg";
 
 	//CONNECTOR
-	MenuItemImagesdsn[ITM_CONNECTOR] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_CONNECTOR] = "images\\Connector.jpg";
 
 	//SELECTION AND EDITING
-	MenuItemImagesdsn[ITM_SELECT] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_EDIT] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_SELECT] = "images\\Select.jpg";
+	MenuItemImagesdsn[ITM_EDIT] = "images\\Edit.jpg";
 
 	//CLIPBOARD
-	MenuItemImagesdsn[ITM_COPY] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_CUT] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_PASTE] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_DEL] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_COPY] = "images\\Copy.jpg";
+	MenuItemImagesdsn[ITM_CUT] = "images\\Cut.jpg";
+	MenuItemImagesdsn[ITM_PASTE] = "images\\Paste.jpg";
+	MenuItemImagesdsn[ITM_DEL] = "images\\Delete.jpg";
 	//UNDO, REDO
-	MenuItemImagesdsn[ITM_UNDO] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_REDO] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_UNDO] = "images\\Undo.jpg";
+	MenuItemImagesdsn[ITM_REDO] = "images\\Redo.jpg";
 
 	//FILES
-	MenuItemImagesdsn[ITM_SAVE] = "images\\Assign.jpg";
-	MenuItemImagesdsn[ITM_LOAD] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_SAVE] = "images\\Save.jpg";
+	MenuItemImagesdsn[ITM_LOAD] = "images\\Load.jpg";
 
-	MenuItemImagesdsn[ITM_SWITCH_SIM] = "images\\Condition.jpg";
-	MenuItemImagesdsn[ITM_EXIT] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_SWITCH_SIM] = "images\\SwitchMode.jpg";
+	MenuItemImagesdsn[ITM_EXIT] = "images\\Exit.jpg";
 
 	
 	//Draw menu item one image at a time
@@ -137,21 +137,17 @@ void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 	///TODO: add code to create the simulation tool bar
 	string MenuItemImagessim[SIM_ITM_CNT];
 	//valdiating
-	MenuItemImagessim[ITM_VALIDATE] = "images\\Assign.jpg";
+	MenuItemImagessim[ITM_VALIDATE] = "images\\Validate.jpg";
 	//run
-	MenuItemImagessim[ITM_RUN] = "images\\Assign.jpg";
+	MenuItemImagessim[ITM_RUN] = "images\\Run.jpg";
     //Dubug
-	MenuItemImagessim[ITM_DEBUG] = "images\\Assign.jpg";
+	MenuItemImagessim[ITM_DEBUG] = "images\\Debug.jpg";
     //GENCODE
-	MenuItemImagessim[ITM_GENCODE] = "images\\Assign.jpg";
-    //REVALIDATE
-	MenuItemImagessim[ITM_REVALIDATE]= "images\\Assign.jpg";
-    //Rerun
-	MenuItemImagessim[ITM_RERUN]= "images\\Assign.jpg";
+	MenuItemImagessim[ITM_GENCODE] = "images\\GenerateCode.jpg";
     //switch
-	MenuItemImagessim[ITM_SWITCH_DSN_MODE]= "images\\Condition.jpg";
+	MenuItemImagessim[ITM_SWITCH_DSN_MODE]= "images\\SwitchMode.jpg";
 	//Exit
-	MenuItemImagessim[ITM_EXITSIM] = "images\\Assign.jpg";
+	MenuItemImagessim[ITM_EXITSIM] = "images\\Exit.jpg";
 	//Draw menu item one image at a time
 
 	for (int i = 0; i < SIM_ITM_CNT; i++)
