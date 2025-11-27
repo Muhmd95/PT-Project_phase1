@@ -123,8 +123,6 @@ enum SimMenuItem //The items of the simulation menu
 
 	ITM_DEBUG,
 	ITM_GENCODE,
-	ITM_REVALIDATE,
-	ITM_RERUN,
 	ITM_SWITCH_DSN_MODE,
 	ITM_EXITSIM,
 

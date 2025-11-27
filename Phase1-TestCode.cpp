@@ -438,14 +438,6 @@ int main()
 				pOut->PrintMessage("Action: generate C++ code");
 				break;
 
-			case REVALIDATE:
-				pOut->PrintMessage("Action: revalidate flowchart");
-				break;
-
-			case RERUN:
-				pOut->PrintMessage("Action: rerun simulation");
-				break;
-
 			case UNDO:
 				pOut->PrintMessage("Action: undo last change");
 				break;
