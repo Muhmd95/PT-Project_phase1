@@ -12,8 +12,8 @@ Output::Output()
 	UI.AppMode = DESIGN;	//Design Mode is the default mode
 
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 65;   // I edited the width of the items
+	UI.ToolBarHeight = 55;
+	UI.MenuItemWidth = 60;   // I edited the width of the items
 	UI.DrawingAreaWidth = 0.75 * UI.width;
 
 	UI.DrawColor = BLUE;
@@ -76,8 +76,8 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	string MenuItemImagesdsn[DSN_ITM_CNT];
 
 	//START AND END
-	MenuItemImagesdsn[ITM_START] = "images\\Assign.jpg"; 
-	MenuItemImagesdsn[ITM_END] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_START] = "images\\start.jpg"; 
+	MenuItemImagesdsn[ITM_END] = "images\\end.jpg";
 
 	//DECLARE
 	MenuItemImagesdsn[ITM_DECLARE] = "images\\Assign.jpg";
@@ -106,6 +106,9 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	MenuItemImagesdsn[ITM_CUT] = "images\\Assign.jpg";
 	MenuItemImagesdsn[ITM_PASTE] = "images\\Assign.jpg";
 	MenuItemImagesdsn[ITM_DEL] = "images\\Assign.jpg";
+	//UNDO, REDO
+	MenuItemImagesdsn[ITM_UNDO] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_REDO] = "images\\Assign.jpg";
 
 	//FILES
 	MenuItemImagesdsn[ITM_SAVE] = "images\\Assign.jpg";
@@ -145,12 +148,10 @@ void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 	MenuItemImagessim[ITM_REVALIDATE]= "images\\Assign.jpg";
     //Rerun
 	MenuItemImagessim[ITM_RERUN]= "images\\Assign.jpg";
-    //undo
-	MenuItemImagessim[ITM_UNDO] = "images\\Assign.jpg";
-    //Redo
-	MenuItemImagessim[ITM_REDO] = "images\\Assign.jpg";
     //switch
 	MenuItemImagessim[ITM_SWITCH_DSN_MODE]= "images\\Condition.jpg";
+	//Exit
+	MenuItemImagessim[ITM_EXITSIM] = "images\\Assign.jpg";
 	//Draw menu item one image at a time
 
 	for (int i = 0; i < SIM_ITM_CNT; i++)

@@ -97,6 +97,9 @@ enum DesignMenuItem //The items of the design menu --> THE ORDER MATTERS
 	ITM_CUT,
 	ITM_PASTE,
 	ITM_DEL,
+	//UNDO,redo
+	ITM_UNDO,
+	ITM_REDO,
 
 	// File Operations
 	ITM_SAVE,
@@ -122,9 +125,8 @@ enum SimMenuItem //The items of the simulation menu
 	ITM_GENCODE,
 	ITM_REVALIDATE,
 	ITM_RERUN,
-	ITM_UNDO,
-	ITM_REDO,
 	ITM_SWITCH_DSN_MODE,
+	ITM_EXITSIM,
 
 
 	

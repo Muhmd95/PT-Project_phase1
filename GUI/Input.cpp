@@ -136,6 +136,8 @@ ActionType Input::GetUserAction() const
 			case ITM_COPY:		return COPY;
 			case ITM_CUT:		return CUT;
 			case ITM_PASTE:		return PASTE;
+			case ITM_UNDO:		return UNDO;
+			case ITM_REDO:		return REDO;
 			case ITM_SAVE:		return SAVE;
 			case ITM_LOAD:		return LOAD;
 			case ITM_SWITCH_SIM:		return SWITCH_SIM_MODE;
@@ -177,9 +179,8 @@ ActionType Input::GetUserAction() const
 			case ITM_GENCODE: return GENCODE;
 			case ITM_REVALIDATE: return REVALIDATE;
 			case ITM_RERUN: return RERUN;
-			case ITM_UNDO: return UNDO;
-			case ITM_REDO: return REDO;
 			case ITM_SWITCH_DSN_MODE: return SWITCH_DSN_MODE;
+			case ITM_EXITSIM:    return EXIT;
 
 			default: return SIM_TOOL;
 			}
