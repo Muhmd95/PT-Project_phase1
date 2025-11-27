@@ -12,8 +12,8 @@ Output::Output()
 	UI.AppMode = DESIGN;	//Design Mode is the default mode
 
 	UI.StatusBarHeight = 50;
-	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 65;   // I edited the width of the items
+	UI.ToolBarHeight = 55;
+	UI.MenuItemWidth = 60;   // I edited the width of the items
 	UI.DrawingAreaWidth = 0.75 * UI.width;
 
 	UI.DrawColor = BLUE;
@@ -76,8 +76,8 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	string MenuItemImagesdsn[DSN_ITM_CNT];
 
 	//START AND END
-	MenuItemImagesdsn[ITM_START] = "images\\Assign.jpg"; 
-	MenuItemImagesdsn[ITM_END] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_START] = "images\\start.jpg"; 
+	MenuItemImagesdsn[ITM_END] = "images\\end.jpg";
 
 	//DECLARE
 	MenuItemImagesdsn[ITM_DECLARE] = "images\\Assign.jpg";
@@ -106,6 +106,9 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 	MenuItemImagesdsn[ITM_CUT] = "images\\Assign.jpg";
 	MenuItemImagesdsn[ITM_PASTE] = "images\\Assign.jpg";
 	MenuItemImagesdsn[ITM_DEL] = "images\\Assign.jpg";
+	//UNDO, REDO
+	MenuItemImagesdsn[ITM_UNDO] = "images\\Assign.jpg";
+	MenuItemImagesdsn[ITM_REDO] = "images\\Assign.jpg";
 
 	//FILES
 	MenuItemImagesdsn[ITM_SAVE] = "images\\Assign.jpg";
@@ -120,7 +123,7 @@ void Output::CreateDesignToolBar() //Draws the Design Menu
 		pWind->DrawImage(MenuItemImagesdsn[i], i*UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 2);
+	pWind->SetPen(YELLOW, 2);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);	
 
 }
@@ -145,34 +148,32 @@ void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 	MenuItemImagessim[ITM_REVALIDATE]= "images\\Assign.jpg";
     //Rerun
 	MenuItemImagessim[ITM_RERUN]= "images\\Assign.jpg";
-    //undo
-	MenuItemImagessim[ITM_UNDO] = "images\\Assign.jpg";
-    //Redo
-	MenuItemImagessim[ITM_REDO] = "images\\Assign.jpg";
     //switch
 	MenuItemImagessim[ITM_SWITCH_DSN_MODE]= "images\\Condition.jpg";
+	//Exit
+	MenuItemImagessim[ITM_EXITSIM] = "images\\Assign.jpg";
 	//Draw menu item one image at a time
 
 	for (int i = 0; i < SIM_ITM_CNT; i++)
 		pWind->DrawImage(MenuItemImagessim[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 2);
+	pWind->SetPen(BLUE, 2);
 	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::ClearStatusBar()
 {
 	//Clear Status bar by drawing a filled white rectangle
-	pWind->SetPen(RED, 2);
+	pWind->SetPen(BLUE, 2);
 	pWind->SetBrush(WHITE);
 	pWind->DrawRectangle(0, UI.height - UI.StatusBarHeight, UI.width, UI.height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void Output::ClearDrawArea()
 {
-	pWind->SetPen(RED, 2);
-	pWind->SetBrush(WHITE);
+	pWind->SetPen(BLUE, 2);
+	pWind->SetBrush(LIGHTGRAY);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.DrawingAreaWidth, UI.height - UI.StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -186,8 +187,8 @@ void Output::ClearToolBar()
 void Output::ClearOutputBar()
 {
 	//Create output bar by drawing a filled rectangle
-	pWind->SetPen(RED, 2);
-	pWind->SetBrush(LIGHTBLUE);
+	pWind->SetPen(BLUE, 2);
+	pWind->SetBrush(LEMONCHIFFON);
 	pWind->DrawRectangle(UI.DrawingAreaWidth, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -243,7 +244,7 @@ void Output::DrawCondionalStat(Point Center, int width, int height, string Text,
 	int Y[4] = { cy - height / 2, cy, cy + height / 2, cy };
 	pWind->DrawPolygon(X, Y, 4);
 	pWind->SetPen(BLACK, 2);
-	pWind->DrawString(cx - width/ 4, cy, Text);
+	pWind->DrawString(cx - 6, cy-10, Text);
 }
 
 void Output::DrawParallelogram(Point Center, int width, int height, string Text, bool Selected)
