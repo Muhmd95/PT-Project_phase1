@@ -300,7 +300,52 @@ void Output :: DrawConnector(Point start,Point end,bool Selected)
 	{
 		pWind->SetPen(UI.DrawColor, 3);//normal
 	}
-	pWind->DrawLine(start.x, start.y, end.x, end.y);// Drawing the line
+	//case 1 default vertical connector
+	if ((start.x == end.x) && end.y > start.y)
+	{
+		pWind->DrawLine(start.x,start.y ,end.x,end.y);
+		pWind->DrawTriangle(end.x - 5, end.y, end.x + 5, end.y, end.x, end.y + 10);
+
+	}
+	// case 2 horizontal connector points to left then down
+	else if (start.x > end.x && end.y > start.y)
+	{
+		pWind->DrawLine(start.x, start.y, end.x, start.y);
+		pWind->DrawLine(end.x, start.y, end.x, end.y);
+		pWind->DrawTriangle(end.x - 5, end.y, end.x + 5, end.y, end.x, end.y + 10);
+		
+
+	}
+	// case 2.1 points right then down
+	else if (start.x < end.x && end.y > start.y)
+	{
+		pWind->DrawLine(start.x, start.y, end.x, start.y);
+		pWind->DrawLine(end.x, start.y, end.x, end.y);
+		pWind->DrawTriangle(end.x - 5, end.y, end.x + 5, end.y, end.x, end.y + 10);
+		
+
+	}
+	//case 3 loop case 
+	else if (end.y < start.y)
+	{
+		if (end.x < start.x)// left > up >right
+		{
+			pWind->DrawLine(start.x, start.y, start.x-50, start.y);
+			pWind->DrawLine(start.x -50, start.y, start.x -50, end.y);
+			pWind->DrawLine(start.x - 50, end.y, end.x, end.y);
+			pWind->DrawTriangle(end.x, end.y - 5, end.x, end.y + 5, end.x + 10, end.y);
+
+
+		}
+		else if (start.x < end.x) //right > up > left
+		{
+			pWind->DrawLine(start.x, start.y, start.x + 50, start.y);
+			pWind->DrawLine(start.x + 50, start.y, start.x + 50, end.y);
+			pWind->DrawLine(start.x + 50, end.y, end.x, end.y);
+			pWind->DrawTriangle(end.x, end.y + 5, end.x, end.y - 5, end.x - 10, end.y);
+		}
+	}
+
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
