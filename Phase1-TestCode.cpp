@@ -312,6 +312,7 @@ int main()
 	/// 2.8- Draw String TEST
 	//Drawing a String in a specific location
 	pOut->PrintMessage("Drawing A String, Click to continue");
+	pIn->GetPointClicked(P);
 	
 	//Note: the function of this drawing is already implemented in Output class , you only need to call it
 
@@ -320,6 +321,7 @@ int main()
 	// 1- Get a String from the user --> using the already-implemented Input::GetString(...) fn
 	// 2- Draw that string in location (400, 200) --> using the already-implemented Output::DrawString(...) fn
 	////////////
+
 	string string_draw = pIn->GetString(pOut);
 	pOut->DrawString(400, 200, string_draw);
 
@@ -405,11 +407,11 @@ int main()
 				break;
 
 			case ADD_VAR_ASSIGN:
-				pOut->PrintMessage("Action: add VAR ASSIGN statement , Click anywhere");
+				pOut->PrintMessage("Action: add VARIABLE ASSIGN statement , Click anywhere");
 				break;
 
 			case ADD_OPER_ASSIGN:
-				pOut->PrintMessage("Action: adD OPER ASSIGN , Click anywhere");
+				pOut->PrintMessage("Action: add OPERATOR ASSIGN , Click anywhere");
 				break;
 
 			case ADD_READ:
