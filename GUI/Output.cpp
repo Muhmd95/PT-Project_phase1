@@ -240,7 +240,7 @@ void Output::DrawCondionalStat(Point Center, int width, int height, string Text,
 	int Y[4] = { cy - height / 1.5 , cy, cy + height / 1.5 , cy };
 	pWind->DrawPolygon(X, Y, 4);
 	pWind->SetPen(BLACK, 2);
-	pWind->DrawString(cx - 6, cy-10, Text);
+	pWind->DrawString(cx - 14, cy-8, Text);
 }
 
 void Output::DrawParallelogram(Point Center, int width, int height, string Text, bool Selected)
