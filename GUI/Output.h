@@ -30,7 +30,7 @@ public:
 	// -- Statements Drawing Functions
 	void DrawAssign(Point Left, int width, int height, string Text, bool Selected=false);
 
-	//TODO: Add similar functions for drawing all other statements.
+	//DONE: Add similar functions for drawing all other statements.
 	//		e.g. DrawDeclareStat(.....), DrawCondtionalStat(......), DrawStart(......), DrawEnd(.......), ...etc
 	//		Decide the parameters that should be passed to each of them
 	void Output::DrawCondionalStat(Point Center, int width, int height, string Text, bool Selected=false);
@@ -40,7 +40,7 @@ public:
 	void Output::DrawStart(Point Center, int width, int height,string, bool Selected=false);
 	void Output::DrawEnd(Point Center, int width, int height,string , bool Selected=false);
 
-	//TODO: Add DrawConnector function
+	//DONE: Add DrawConnector function
 	void Output::DrawConnector(Point start, Point end,bool Selected=false);
 	
 	void Drawdouble(Point Center, double d); // added to draw double
