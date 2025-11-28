@@ -175,6 +175,12 @@ int main()
 
 	P.x = 300; P.y = 200;
 	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI, "O", true);
+
+	P.x = 100; P.y = 300;
+	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH / 2, UI.ASSGN_HI, "");
+
+	P.x = 300; P.y = 300;
+	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH / 2, UI.ASSGN_HI, "", true);
 	////////////
 
 	pIn->GetPointClicked(P);	//Wait for any click

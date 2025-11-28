@@ -134,7 +134,7 @@ void Output::CreateSimulationToolBar() //Draws the Simulation Menu
 
 	ClearToolBar();  // created to clear the toolbar
 	UI.AppMode = SIMULATION;	//Simulation Mode
-	///TODO: add code to create the simulation tool bar
+	///DONE: add code to create the simulation tool bar
 	string MenuItemImagessim[SIM_ITM_CNT];
 	//valdiating
 	MenuItemImagessim[ITM_VALIDATE] = "images\\Validate.jpg";
@@ -224,7 +224,7 @@ void Output::DrawAssign(Point Left, int width, int height, string Text, bool Sel
 	pWind->DrawString(Left.x+width/8, Left.y + height/3, Text);
 }
 
-//TODO: Add similar functions for drawing all other statements.
+//DONE: Add similar functions for drawing all other statements.
 //		e.g. DrawDeclareStat(.....), DrawCondtionalStat(......), DrawStart(......), DrawEnd(.......), ...etc
 //		Decide the parameters that should be passed to each of them
 
@@ -237,7 +237,7 @@ void Output::DrawCondionalStat(Point Center, int width, int height, string Text,
 	int cx = Center.x;
 	int cy = Center.y;
 	int X[4] = { cx, cx + width / 2, cx, cx - width / 2 };
-	int Y[4] = { cy - height / 2, cy, cy + height / 2, cy };
+	int Y[4] = { cy - height / 1.5 , cy, cy + height / 1.5 , cy };
 	pWind->DrawPolygon(X, Y, 4);
 	pWind->SetPen(BLACK, 2);
 	pWind->DrawString(cx - 6, cy-10, Text);

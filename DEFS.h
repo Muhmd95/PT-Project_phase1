@@ -9,7 +9,7 @@ enum  MODE	//Modes of operation
 	SIMULATION
 };
 
-// TODO: Add any action type here
+// DONE: Add any action type here
 enum ActionType // The actions supported
 {
 	ADD_START, //Add start statement DONE
@@ -41,7 +41,7 @@ enum ActionType // The actions supported
 	EXIT,		//Exit the application done
 
 
-	//TODO: ADD THE ACTIONS OF SIMULATION MODE
+	//DONE: ADD THE ACTIONS OF SIMULATION MODE
 	VALIDATE,	    //Validate done
 	RUN,	        //Run done
 	DEBUG,         //debug done
@@ -59,7 +59,7 @@ enum ActionType // The actions supported
 	STATUS 		   //A click on the status bar done
 };
 
-// TODO: you should add more items
+// DONE: you should add more items
 enum DesignMenuItem //The items of the design menu --> THE ORDER MATTERS
 {
 	//Note: Items are ordered here as they appear in menu
@@ -112,14 +112,14 @@ enum DesignMenuItem //The items of the design menu --> THE ORDER MATTERS
 	
 };
 
-// TODO: you should add more items if needed
+// DONE: you should add more items if needed
 enum SimMenuItem //The items of the simulation menu
 {
 	//Note: Items are ordered here as they appear in menu
 	ITM_VALIDATE,	//Validate
 	ITM_RUN,	    //Run
 
-	//TODO:Add more items names here
+	//DONE:Add more items names here
 
 	ITM_DEBUG,
 	ITM_GENCODE,
