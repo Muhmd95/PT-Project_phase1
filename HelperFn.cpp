@@ -9,7 +9,7 @@ bool IsValue (string input)
 
 	// Double values can be: 12.5, -12.5, -23, -23. , -23.0 …etc.
 
-	//DONE: complete this function   Mohamed Ahmed
+	//DONE: complete this function  
 	if (input.empty())
 	{
 		return false;

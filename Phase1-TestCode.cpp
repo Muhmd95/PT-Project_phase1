@@ -348,7 +348,7 @@ int main()
 	// 1- Read a (double value) from the user and print it
 	double value = pIn->Input::GetValue(pOut);
 	Point p1 = { 100 ,200 };
-	pOut->Drawdouble(p1, value);
+	pOut->Drawdouble(p1, value); // drawing the double value with percision 3
 
 	// 2- Read a (variable name) from the user and print it
 	string variable = pIn->GetVariable(pOut);
