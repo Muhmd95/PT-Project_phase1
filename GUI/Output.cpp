@@ -352,7 +352,7 @@ void Output :: DrawConnector(Point start,Point end,bool Selected)
 
 void Output::Drawdouble(Point Center, double d) /// added this to draw double
 {
-	pWind->DrawDouble(Center.x, Center.y, d);
+	pWind->DrawDouble(Center.x, Center.y, d); 
 }
 
 

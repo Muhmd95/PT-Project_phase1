@@ -1168,7 +1168,7 @@ void window::DrawInteger(const int iX, const int iY, const long lNumber) {
 void window::DrawDouble(const int iX, const int iY, const double dNumber) {
 
 	char cTmpStorage[128];
-	sprintf(cTmpStorage, "%f", dNumber);
+	sprintf(cTmpStorage, "%.3f", dNumber);
 	
     DrawString(iX, iY, cTmpStorage);
 }
