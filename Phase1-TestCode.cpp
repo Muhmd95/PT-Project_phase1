@@ -148,7 +148,7 @@ int main()
 
 	// Drawing edited(normal) OPERATOR assignment statement
 	P.x = 100;	P.y = 400;
-	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X =  60-57");
+	pOut->DrawAssign(P, UI.ASSGN_WDTH, UI.ASSGN_HI, "X =  60 - 57");
 
 	///////////////////////////////////////////////////////////
 
@@ -171,10 +171,10 @@ int main()
 	////////////
 	//DONE: Add code to draw different (Conditional) statements here in ALL STATES
 	P.x = 100; P.y = 200;
-	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI,"O");
+	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI,"X>0");
 
 	P.x = 300; P.y = 200;
-	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI, "O", true);
+	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH/2, UI.ASSGN_HI, "X<=0", true);
 
 	P.x = 100; P.y = 300;
 	pOut->DrawCondionalStat(P, UI.ASSGN_WDTH / 2, UI.ASSGN_HI, "");
@@ -216,6 +216,12 @@ int main()
 	////////////
 	//DONE: Add code to draw different (Write) statements here in ALL STATES
 	////////////
+	P.x = 100; P.y = 100;
+	pOut->DrawParallelogram(P, 100, 50, "");
+
+	P.x = 300; P.y = 100;
+	pOut->DrawParallelogram(P, 100, 50, "", true);
+
 	P.x = 100; P.y = 200;
 	pOut->DrawWrite(P, 100, 50);
 
@@ -321,7 +327,7 @@ int main()
 	// 1- Get a String from the user --> using the already-implemented Input::GetString(...) fn
 	// 2- Draw that string in location (400, 200) --> using the already-implemented Output::DrawString(...) fn
 	////////////
-
+	pOut->PrintMessage("Enter a string to be drawn");
 	string string_draw = pIn->GetString(pOut);
 	pOut->DrawString(400, 200, string_draw);
 
